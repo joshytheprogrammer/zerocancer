@@ -3,6 +3,7 @@ const urlsToCache = [
   '/',
   '/css/main.css',
   'https://res.cloudinary.com/dsgvwxygr/video/upload/v1691683865/zerocancer/how_to_use.webm',
+  'https://res.cloudinary.com/dsgvwxygr/image/upload/v1691762051/zerocancer/logo_ojnm9f.png',
   '/icons/icon-48x48.png',
   '/icons/icon-128x128.png',
   '/icons/icon-144x144.png',
@@ -14,7 +15,7 @@ const urlsToCache = [
   '/icons/icon-96x96.png',
   '/script.js',
   '/css/animate.css',
-  '/src/img/logo.png'
+  '/img/logo.png'
 ];
 
 self.addEventListener('install', (event) => {

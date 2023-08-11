@@ -1,15 +1,12 @@
 const currentYear = new Date().getFullYear();
 document.getElementById('currentYear').textContent = currentYear;
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then((registration) => {
-      console.log('Service Worker registered with scope:', registration.scope);
-    })
-    .catch((error) => {
-      console.error('Service Worker registration failed:', error);
-    });
-}
+// Apply animate.css classes after content is loaded
+window.addEventListener('load', function () {
+  document.querySelectorAll('.animate__animated').forEach(function (el) {
+    el.classList.add('animate__fadeIn');
+  });
+});
 
 let deferredPrompt;
   

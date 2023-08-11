@@ -22,7 +22,7 @@
 
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/animate.css">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="./manifest.json">
   <link rel="icon" type="image/png" href="./img/logo.png">
   <link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192x192.png">
   <link rel="preload" href="css/animate.css" as="style">
@@ -45,7 +45,17 @@
   <div class="p-4 md:flex gap-4 justify-between items-start">
     <div class="container mx-auto">
       <div class="video rounded-lg overflow-hidden border border-primary shadow-lg animate__animated animate__fadeInUp transition duration-500">
-        <video class="w-full h-auto" poster="" src="https://res.cloudinary.com/dsgvwxygr/video/upload/v1691683865/zerocancer/how_to_use.webm" loading="lazy" controls></video>
+        <video class="w-full h-auto" poster="" loading="lazy" controls>
+          <!-- WebM format -->
+          <source src="https://res.cloudinary.com/dsgvwxygr/video/upload/v1691683865/zerocancer/how_to_use.webm" type="video/webm">
+        
+          <!-- MP4 format -->
+          <source src="https://res.cloudinary.com/dsgvwxygr/video/upload/v1691683865/zerocancer/how_to_use.mp4" type="video/mp4">
+
+          <!-- Fallback content if no supported format is found -->
+          Your browser does not support the video tag.
+        </video>
+        
       </div>
       
       <div class="desc my-6 animate__animated">
@@ -152,15 +162,6 @@
           });
       });
     }
-  </script>
-  
-  <script>
-    // Apply animate.css classes after content is loaded
-    window.addEventListener('load', function () {
-      document.querySelectorAll('.animate__animated').forEach(function (el) {
-        el.classList.add('animate__fadeIn');
-      });
-    });
   </script>
 </body>
 </html>
