@@ -163,7 +163,7 @@ centreSelect.addEventListener('change', () => {
       </address>
       <p class="py-2 text-lg">
         For inquiries, you can contact her at:
-        <span class="block py-2">Phone: +234 806 261 6951</span>
+        <span class="block my-2">Phone: +234 806 261 6951</span>
       </p>
     </div>
     <div class="mt-4 ">
