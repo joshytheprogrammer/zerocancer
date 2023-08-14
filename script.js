@@ -98,6 +98,7 @@ stateSelect.addEventListener('change', () => {
   regionSelect.innerHTML = '<option value="" disabled selected>Select Region</option>';
   centreSelect.innerHTML = '';
   centreCardContainer.innerHTML = '';
+  appointmentContainer.classList.add('hidden');
 
   const selectedStateId = stateSelect.value;
   const selectedState = data.states.find(state => state.id === selectedStateId);
