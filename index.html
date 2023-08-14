@@ -121,11 +121,14 @@
     </div>
 
     <div class="container mx-auto">
-      <div id="schedule" class="w-full bg-primary p-4 mb-4 rounded-lg">
-        <h1 class="font-semibold text-2xl lg:text-3xl text-white pb-2">
+      <div id="schedule" class="w-full py-4 mb-4 relative">
+        <h1 class="font-semibold text-2xl lg:text-3xl text-primary">
           Centre Explorer
         </h1>
-      </div>      
+        <span class="absolute w-24 h-1 rounded-sm bg-primary bottom-0 left-0 mb-2"></span>
+      </div>
+      
+               
       <div class="flex flex-col animate__animated">
         <label class="pb-2 font-medium lg:text-lg" for="state" >Select State:</label>
         <select class="bg-transparent py-1 border border-black rounded-lg h-12 outline-none focus:border-primary transition duration-300" name="state" id="state">
