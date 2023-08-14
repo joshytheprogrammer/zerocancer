@@ -32,13 +32,16 @@
 <body class="bg-white">
   <nav class="px-4 py-4 border-b border-black flex justify-between items-center animate__animated animate__fadeInDown">
     <a class="no-underline text-inherit" href="/">
-      <img src="./img/logo.png" alt="ZeroCancer Logo" class="w-16 h-12 md:w-20 md:h-20 lg:w-24 lg:h-20">
+      <img src="./img/logo.png" alt="ZeroCancer Logo" class="w-32 h-16 md:w-20 md:h-20 lg:w-24 lg:h-20">
+    </a>
+    <a class="block px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-950 transition duration-300" href="#schedule">
+      Schedule
     </a>
     
-    <p class="text-center font-medium">
+    <!-- <p class="text-center font-medium">
       Need Help? <br>
       <a class="text-primary underline cursor-pointer" href="tel:">+234 806 261 6951</a>
-    </p>
+    </p> -->
 </nav>
 
   
@@ -70,43 +73,45 @@
           <p class="mb-4 text-justify">
             Just like other cancers, cervical cancer is <span class="text-primary">preventable and treatable if detected early</span>.
           </p>
-          <p class="mb-4 text-justify">
+
+          <a id="readMoreLink" class="text-primary underline cursor-pointer" onclick="showRemaining()">Read More</a>
+
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             Cervical cancer is caused by some strains of virus known as <em>Human Papilloma Virus (HPV)</em>.
           </p>
-          <p class="mb-4 text-justify">
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             The secret to early detection and prevention is <span class="text-primary">screening for the virus that causes it</span> or using a <em>tissue smear from the cervix (pap smear)</em> or <em>inspection of the cervix with chemicals (VIA)</em> to check women for early signs of the transformation process initiated by the virus.
           </p>
-          <p class="mb-4 text-justify">
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             Detecting these viral strains is possible using either <em>DNA or antigen test</em>. More recently, certain <span class="text-primary">proteins produced by the strains of the virus</span> which cause the cancer, also called <span class="text-primary">Oncoproteins</span>, have been shown to give the most sensitive and accurate results of the presence of high risk of cancer.
           </p>
-          <p class="mb-4 text-justify">
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             <span class="text-primary">Rapid diagnostic test kits</span> which detect these proteins as well as the antigens are also available for the most accurate testing. These kits are <span class="text-primary">easy to use, very affordable</span>, and give <span class="text-primary">instant results</span>. An example is <span class="text-primary">Mobilab HPV 16/18</span> which detects both antigens and oncoproteins.
           </p>
-          <p class="mb-4 text-justify">
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             To perform this test, a <span class="text-primary">sample of fluid from the woman's cervix</span> needs to be obtained. This sample is usually collected by a healthcare professional but recently <span class="text-primary">self collection devices known as Self samplers</span> have been introduced. The <span class="text-primary">Mobilab Delphi Vaginal Self Sampler (DVSS)</span> is one of such.
           </p>
-          <p class="mb-4 text-justify">
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             The <span class="text-primary">video above explains how to collect self samples using the DVSS</span>.
           </p>
-          <p class="mb-4 text-justify">
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             The collected sample can be taken to the laboratory for testing or tested by self if the woman has the kit.
           </p>
-          <p class="mb-4 text-justify">
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             You can find the <span class="text-primary">testing center nearest to you</span> by selecting your location in the designated section of this page for that.
           </p>
-          <p class="mb-4 text-justify">
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             You may also <span class="text-primary">fill the request form</span> to express your interest in the screening on any day and time of your choice using the <span class="text-primary">appointment section</span>.
           </p>
-          
-          <p>
+          <p class="mb-4 text-justify toShowText" style="display: none;">
             You may also <a href="https://api.whatsapp.com/send?text=https://zerocancer.africa" class="text-blue-950 underline">click here</a> to invite your loved ones to screen. By doing so, you are helping to <span class="text-primary">actualize the zero cancer in Africa Initiative</span>.
           </p>
           
         </p>
         <div class="flex"> 
-          <a class="inline-block px-6 py-3 mt-4 mr-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300" href="#schedule">
+          <!-- <a class="inline-block px-6 py-3 mt-4 mr-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300" href="#schedule">
             Schedule an Appointment
-          </a>
+          </a> -->
           <button id="add-to-home-button" class="inline-block px-6 py-3 mt-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300" style="display: none;">
             Add to Home Screen
           </button>
@@ -117,7 +122,7 @@
     
     <div class="container mx-auto">
       <div class="flex flex-col animate__animated">
-        <label class="pb-2 font-medium lg:text-lg" for="location">Select Location:</label>
+        <label class="pb-2 font-medium lg:text-lg" for="State" id="schedule">Select State:</label>
         <select class="bg-transparent py-1 border border-black rounded-lg h-12 outline-none focus:border-primary transition duration-300" name="location" id="location">
           <option value="surulere">Surulere, Lagos.</option>
         </select>
@@ -143,9 +148,8 @@
         </div>
       </div>
       
-      
       <div>
-        <h2 id="schedule" class="font-semibold text-2xl lg:text-3xl text-primary pb-2">
+        <h2 class="font-semibold text-2xl lg:text-3xl text-primary pb-2">
           <a class="after:content-['_↗'] transition duration-300" href="https://docs.google.com/forms/d/e/1FAIpQLSccXsXhUx-a61qcgKeG3Vpa9o9f30jDnNnPJi_5dir5fcFXCQ/viewform?" target="_blank">Schedule an appointment</a>
         </h2>
         <div class="rounded-lg border border-grey-300 hover:border-primary shadow-lg transition duration-300">
@@ -154,7 +158,6 @@
       </div>
     </div>
   </div>
-
   
   <footer class="text-center font-medium text-md my-6">
     <p class="block">You can reach out to us <a class="text-primary underline cursor-pointer"" href="mailto:info@zerocancer.africa">here</a></p>
