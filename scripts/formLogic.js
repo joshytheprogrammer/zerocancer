@@ -12,9 +12,36 @@ const data = {
     
   ],
   centres: [
-    { id: 'centre1', name: 'The Female Doc', managerName: 'Dr. Ayodele Akenzua', mapsLink: 'https://is.gd/8HKDW7', address: 'No 11 Gbajumo Close, off Adeniran Ogunsanya Street, Surulere, Lagos, Nigeria.', phone:'+234 806 261 6951', formlink: 'https://docs.google.com/forms/d/e/1FAIpQLSccXsXhUx-a61qcgKeG3Vpa9o9f30jDnNnPJi_5dir5fcFXCQ/viewform', },
-    { id: 'centre2', name: 'Xabat Gynecology Clinic Ltd', managerName: 'Dr. Christian Omale Musa', mapsLink: 'https://maps.app.goo.gl/Nu6sSmAp7hNRTxQj6', address: 'Suite B7 Goshen Plaza, Kubwa Abuja.', phone: '08039559525', formlink: '', },
-    { id: 'centre3', name: 'Nufan Diagnostic services', managerName: 'Okoye Emmanuel Chibuzo', mapsLink: 'https://goo.gl/maps/5MijcNRdNTo3diJd7', address: 'No 14 Oba Street Ogui Enugu, Nigeria', phone: '08137272674, 08037411702', formlink: '', },
+    { 
+      id: 'centre1', 
+      name: 'The Female Doc', 
+      managerName: 'Dr. Ayodele Akenzua', 
+      services: 'Screening',
+      mapsLink: 'https://is.gd/8HKDW7', 
+      address: 'No 11 Gbajumo Close, off Adeniran Ogunsanya Street, Surulere, Lagos, Nigeria.', 
+      phone:'+234 806 261 6951', 
+      formlink: 'https://docs.google.com/forms/d/e/1FAIpQLSccXsXhUx-a61qcgKeG3Vpa9o9f30jDnNnPJi_5dir5fcFXCQ/viewform'
+    },
+    { 
+      id: 'centre2', 
+      name: 'Xabat Clinic Ltd', 
+      managerName: 'Dr. Christian Omale Musa',  
+      services: 'Screening and Diagnosis',
+      mapsLink: 'https://maps.app.goo.gl/Nu6sSmAp7hNRTxQj6', 
+      address: 'Suite B7 Goshen Plaza, Kubwa Abuja.', 
+      phone: '08039559525', 
+      formlink: '' 
+    },
+    { 
+      id: 'centre3', 
+      name: 'Nufan Diagnostic services', 
+      managerName: 'Okoye Emmanuel Chibuzo',  
+      services: 'Screening, Diagnosis and Treatment',
+      mapsLink: 'https://goo.gl/maps/5MijcNRdNTo3diJd7', 
+      address: 'No 14 Oba Street Ogui Enugu, Nigeria', 
+      phone: '08137272674, 08037411702', 
+      formlink: ''
+    },
     
   ],
 };
@@ -108,6 +135,10 @@ centreSelect.addEventListener('change', () => {
       <p class="py-2 text-lg">
         For inquiries, you can reach out on:
         <span class="block my-2">Phone: ${selectedCentre.phone}</span>
+      </p>
+      <p class="py-2 text-lg">
+        Please note that the following centre is for:
+        <span class="block font-bold my-2">${selectedCentre.services}</span>
       </p>
     </div>
     <div class="mt-4 ">

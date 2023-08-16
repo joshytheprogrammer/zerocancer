@@ -609,10 +609,6 @@ video {
   margin-bottom: 1rem;
 }
 
-.mr-4{
-  margin-right: 1rem;
-}
-
 .mt-4{
   margin-top: 1rem;
 }
@@ -782,6 +778,10 @@ video {
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.font-bold{
+  font-weight: 700;
 }
 
 .font-medium{
