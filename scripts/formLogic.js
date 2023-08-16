@@ -16,7 +16,7 @@ const data = {
       id: 'centre1', 
       name: 'The Female Doc', 
       managerName: 'Dr. Ayodele Akenzua', 
-      services: 'Screening',
+      services: 'Screening only',
       mapsLink: 'https://is.gd/8HKDW7', 
       address: 'No 11 Gbajumo Close, off Adeniran Ogunsanya Street, Surulere, Lagos, Nigeria.', 
       phone:'+234 806 261 6951', 
