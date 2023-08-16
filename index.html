@@ -22,6 +22,7 @@
 
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="https://vjs.zencdn.net/8.3.0/video-js.css"  />
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" type="image/png" href="./img/logo.png">
   <link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192x192.png">
@@ -32,7 +33,7 @@
 <body class="bg-white">
   <nav class="px-4 py-4 border-b border-black flex justify-between items-center animate__animated animate__fadeInDown">
     <a class="no-underline text-inherit" href="/">
-      <img src="./img/logo.png" alt="ZeroCancer Logo" class="w-32 h-16 md:w-20 md:h-20 lg:w-24 lg:h-20">
+      <img src="./img/logo.png" alt="ZeroCancer Logo" class="w-32 h-16 md:w-20 md:h-20 lg:w-36 lg:h-18">
     </a>
     <a class="block px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-950 transition duration-300" href="#schedule">
       Schedule
@@ -42,13 +43,12 @@
       Need Help? <br>
       <a class="text-primary underline cursor-pointer" href="tel:">+234 806 261 6951</a>
     </p> -->
-</nav>
+  </nav>
 
-  
   <div class="p-4 md:flex gap-6 justify-between items-start">
     <div class="container mx-auto">
       <div class="video rounded-lg overflow-hidden border border-primary shadow-lg animate__animated animate__fadeInUp transition duration-500">
-        <video class="w-full h-auto" poster="" loading="lazy" controls>
+        <video class="w-full video-js" preload="auto" data-setup="{}" poster="https://res.cloudinary.com/dsgvwxygr/image/upload/v1692189641/zerocancer/poster_r48e44.png" loading="lazy" width="640" controls>
           <!-- WebM format -->
           <source src="https://res.cloudinary.com/dsgvwxygr/video/upload/v1691768919/zerocancer/Zerocancer_video_rchsqf.webm" type="video/webm">
         
@@ -57,6 +57,9 @@
 
           <!-- Fallback content if no supported format is found -->
           Your browser does not support the video tag.
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
         </video>
         
       </div>
@@ -174,6 +177,7 @@
     &copy; <span class="font-bold" id="currentYear"></span> ZeroCancer. All rights reserved.
   </footer>
 
+  <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
   <script type="module" src="script.js"></script>
   <script>
     if ('serviceWorker' in navigator) {

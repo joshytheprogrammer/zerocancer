@@ -645,10 +645,6 @@ video {
   height: 4rem;
 }
 
-.h-auto{
-  height: auto;
-}
-
 .w-24{
   width: 6rem;
 }
@@ -915,12 +911,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @media (min-width: 1024px){
-  .lg\:h-20{
-    height: 5rem;
-  }
-
-  .lg\:w-24{
-    width: 6rem;
+  .lg\:w-36{
+    width: 9rem;
   }
 
   .lg\:text-3xl{
