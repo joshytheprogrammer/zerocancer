@@ -7,7 +7,7 @@
   <meta name="description" content="ZeroCancer - Taking Steps Towards Preventing and Treating Cervical Cancer in Africa. Learn about early detection, prevention methods, and screening locations.">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@YourTwitterHandle">
+  <meta name="twitter:site" content="@zerocancer">
   <meta name="twitter:title" content="Zero Cancer - Product Landing Page">
   <meta name="twitter:description" content="Taking Steps Towards Preventing and Treating Cervical Cancer in Africa. Learn about early detection, prevention methods, and screening locations.">
   <meta name="twitter:image" content="https://res.cloudinary.com/dsgvwxygr/image/upload/v1691762051/zerocancer/logo_ojnm9f.png">
@@ -74,7 +74,7 @@
             Just like other cancers, cervical cancer is <span class="text-primary">preventable and treatable if detected early</span>.
           </p>
 
-          <a id="readMoreLink" class="text-primary underline cursor-pointer" onclick="showRemaining()">Read More</a>
+          <a id="readMoreLink" class="px-6 py-3 mt-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300 cursor-pointer">Read More</a>
 
           <p class="mb-4 text-justify toShowText" style="display: none;">
             Cervical cancer is caused by some strains of virus known as <em>Human Papilloma Virus (HPV)</em>.
@@ -108,10 +108,7 @@
           </p>
           
         </p>
-        <div class="flex"> 
-          <!-- <a class="inline-block px-6 py-3 mt-4 mr-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300" href="#schedule">
-            Schedule an Appointment
-          </a> -->
+        <div class="inline-flex">
           <button id="add-to-home-button" class="inline-block px-6 py-3 mt-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300" style="display: none;">
             Add to Home Screen
           </button>
@@ -119,52 +116,65 @@
         
       </div>
     </div>
-    
-    <div class="container mx-auto">
-      <div class="flex flex-col animate__animated">
-        <label class="pb-2 font-medium lg:text-lg" for="State" id="schedule">Select State:</label>
-        <select class="bg-transparent py-1 border border-black rounded-lg h-12 outline-none focus:border-primary transition duration-300" name="location" id="location">
-          <option value="surulere">Surulere, Lagos.</option>
-        </select>
-      </div>
 
-      <div class="p-4 lg:p-6 bg-primary text-white rounded-lg my-6 animate__animated">
-        <h2 class="font-semibold text-2xl lg:text-3xl transition duration-300 mb-2">Visit Us</h2>
-        <div class="">
-          <p class="py-2 transition duration-300 text-lg">
-            Dr. Ayodele Akenzua, known as The Female Doc, is located at:
-          </p>
-          <address class="py-2 text-lg">
-            No 11 Gbajumo Close, off Adeniran Ogunsanya Street,<br>
-            Surulere, Lagos, Nigeria.
-          </address>
-          <p class="py-2 text-lg">
-            For inquiries, you can contact her at:
-            <span class="block py-2">Phone: +234 806 261 6951</span>
-          </p>
-        </div>
-        <div class="mt-4 ">
-          <a rel="noopener" class="underline after:content-['_↗'] transition duration-300 block text-lg text-white" target="_blank" href="https://is.gd/8HKDW7">View on Maps</a>
-        </div>
+    <div class="container mx-auto">
+      <div id="schedule" class="w-full py-4 mb-4 relative">
+        <h1 class="font-semibold text-2xl lg:text-3xl text-primary">
+          Centre Explorer
+        </h1>
+        <span class="absolute w-24 h-1 rounded-sm bg-primary bottom-0 left-0 mb-2"></span>
       </div>
       
-      <div>
+               
+      <div class="flex flex-col animate__animated">
+        <label class="pb-2 font-medium lg:text-lg" for="state" >Select State:</label>
+        <select class="bg-transparent py-1 border border-black rounded-lg h-12 outline-none focus:border-primary transition duration-300" name="state" id="state">
+          <option value="" disabled selected>Select State</option>
+          <!-- Add more state options as needed -->
+        </select>
+      </div>
+    
+      <div id="regionContainer" class="hidden">
+        <div class="my-4 flex flex-col animate__animated">
+          <label class="pb-2 font-medium lg:text-lg" for="region">Select Region:</label>
+          <select class="bg-transparent py-1 border border-black rounded-lg h-12 outline-none focus:border-primary transition duration-300" name="region" id="region">
+            <!-- Region options will be populated dynamically -->
+          </select>
+        </div>
+      </div>
+    
+      <div id="centreContainer" class="hidden">
+        <div class="my-4 flex flex-col animate__animated">
+          <label class="pb-2 font-medium lg:text-lg" for="centre">Select Centre:</label>
+          <select class="bg-transparent py-1 border border-black rounded-lg h-12 outline-none focus:border-primary transition duration-300" name="centre" id="centre">
+            
+            <!-- Centre options will be populated dynamically -->
+          </select>
+        </div>
+      </div>
+    
+      <div id="centreCard" class="hidden">
+        <!-- Centre details card will be displayed dynamically -->
+      </div>
+    
+      <div id="appointmentCont" class="hidden">
         <h2 class="font-semibold text-2xl lg:text-3xl text-primary pb-2">
-          <a class="after:content-['_↗'] transition duration-300" href="https://docs.google.com/forms/d/e/1FAIpQLSccXsXhUx-a61qcgKeG3Vpa9o9f30jDnNnPJi_5dir5fcFXCQ/viewform?" target="_blank">Schedule an appointment</a>
+          <a id="appointmentLink" class="after:content-['_↗'] transition duration-300" href="https://docs.google.com/forms/d/e/1FAIpQLSccXsXhUx-a61qcgKeG3Vpa9o9f30jDnNnPJi_5dir5fcFXCQ/viewform?" target="_blank">Schedule an appointment</a>
         </h2>
         <div class="rounded-lg border border-grey-300 hover:border-primary shadow-lg transition duration-300">
-          <iframe class="w-full" src="https://docs.google.com/forms/d/e/1FAIpQLSccXsXhUx-a61qcgKeG3Vpa9o9f30jDnNnPJi_5dir5fcFXCQ/viewform?embedded=true" height="480px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <iframe id="appointmentIframe" class="w-full" height="480px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
       </div>
     </div>
+    
   </div>
   
-  <footer class="text-center font-medium text-md my-6">
+  <footer class="text-center font-medium text-md my-6 py-2">
     <p class="block">You can reach out to us <a class="text-primary underline cursor-pointer"" href="mailto:info@zerocancer.africa">here</a></p>
-    &copy; <span id="currentYear"></span> ZeroCancer. All rights reserved.
+    &copy; <span class="font-bold" id="currentYear"></span> ZeroCancer. All rights reserved.
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
