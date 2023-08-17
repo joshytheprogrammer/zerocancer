@@ -3,7 +3,8 @@ readMoreLink.addEventListener('click', showRemaining);
 
 function showRemaining() {
   const paragraphs = document.querySelectorAll('.toShowText');
-  for (let i = 3; i < paragraphs.length; i++) {
+  
+  for (let i = 0; i < paragraphs.length; i++) {
     paragraphs[i].style.display = 'block';
     paragraphs[i].classList.add('animate__animated', 'animate__fadeIn');
   }

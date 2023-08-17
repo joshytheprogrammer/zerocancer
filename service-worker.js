@@ -5,6 +5,7 @@ const urlsToCache = [
   'https://res.cloudinary.com/dsgvwxygr/video/upload/v1691768919/zerocancer/Zerocancer_video_rchsqf.mp4',
   'https://res.cloudinary.com/dsgvwxygr/video/upload/v1691768919/zerocancer/Zerocancer_video_rchsqf.webm',
   'https://res.cloudinary.com/dsgvwxygr/image/upload/v1691762051/zerocancer/logo_ojnm9f.png',
+  'https://res.cloudinary.com/dsgvwxygr/image/upload/v1692189641/zerocancer/poster_r48e44.png',
   '/icons/icon-48x48.png',
   '/icons/icon-128x128.png',
   '/icons/icon-144x144.png',
