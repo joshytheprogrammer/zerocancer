@@ -15,7 +15,6 @@ const urlsToCache = [
   '/icons/icon-512x512.png',
   '/icons/icon-72x72.png',
   '/icons/icon-96x96.png',
-  '/script.js',
   '/css/animate.css',
   '/img/logo.png'
 ];

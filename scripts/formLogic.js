@@ -3,7 +3,6 @@ const data = {
     { id: 'lagos', name: 'Lagos', regions: ["surulere"] },
     { id: 'abuja', name: 'Abuja', regions: ["kubwa"] },
     { id: 'enugu', name: 'Enugu', regions: ["ogui"] },
-    
   ],
   regions: [
     { id: 'surulere', name: ' Surulere', centres: ['centre1'] },
