@@ -75,7 +75,7 @@
             Just like other cancers, cervical cancer is <span class="text-primary">preventable and treatable if detected early</span>.
           </p>
 
-          <a id="readMoreLink" class="px-6 py-3 mt-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300 cursor-pointer">Read More</a>
+          <a id="readMoreLink" class="w-fit px-6 py-3 mt-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300 cursor-pointer">Read More</a>
 
           <p class="mb-4 text-justify toShowText" style="display: none;">
             Cervical cancer is caused by some strains of virus known as <em>Human Papilloma Virus (HPV)</em>.
@@ -108,6 +108,7 @@
             You may also <a href="https://api.whatsapp.com/send?text=https://zerocancer.africa" class="text-blue-950 underline">click here</a> to invite your loved ones to screen. By doing so, you are helping to <span class="text-primary">actualize the zero cancer in Africa Initiative</span>.
           </p>
           
+          <a id="readLessLink" class="w-fit px-6 py-3 mt-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300 cursor-pointer hidden">Read Less</a>
         </p>
         <div class="inline-flex">
           <button id="add-to-home-button" class="inline-block px-6 py-3 mt-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-blue-950 transition duration-300" style="display: none;">
@@ -143,6 +144,16 @@
           </select>
         </div>
       </div>
+      
+      <div id="serviceContainer" class="hidden">
+        <div class="my-4 flex flex-col animate__animated">
+          <label class="pb-2 font-medium lg:text-lg" for="service">Select Service Type:</label>
+          <select class="bg-transparent py-1 border border-black rounded-lg h-12 outline-none focus:border-primary transition duration-300" name="service" id="service">
+            
+          </select>
+        </div>
+      </div>
+      
     
       <div id="centreContainer" class="hidden">
         <div class="my-4 flex flex-col animate__animated">

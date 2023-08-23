@@ -3,7 +3,6 @@ const data = {
     { id: 'lagos', name: 'Lagos', regions: ["surulere"] },
     { id: 'abuja', name: 'Abuja', regions: ["kubwa"] },
     { id: 'enugu', name: 'Enugu', regions: ["ogui"] },
-    
   ],
   regions: [
     { id: 'surulere', name: ' Surulere', centres: ['centre1'] },
@@ -16,7 +15,7 @@ const data = {
       id: 'centre1', 
       name: 'The Female Doc', 
       managerName: 'Dr. Ayodele Akenzua', 
-      services: 'Screening, Diagnosis and Treatment',
+      services: 'Screening + Diagnosis and Treatment',
       mapsLink: 'https://is.gd/8HKDW7', 
       address: 'No 11 Gbajumo Close, off Adeniran Ogunsanya Street, Surulere, Lagos, Nigeria.', 
       phone:'+234 806 261 6951', 
@@ -26,7 +25,7 @@ const data = {
       id: 'centre2', 
       name: 'Xabat Clinic Ltd', 
       managerName: 'Dr. Christian Omale Musa',  
-      services: 'Screening, Diagnosis and Treatment',
+      services: 'Screening + Diagnosis and Treatment',
       mapsLink: 'https://maps.app.goo.gl/Nu6sSmAp7hNRTxQj6', 
       address: 'Suite B7 Goshen Plaza, Kubwa Abuja.', 
       phone: '08039559525', 
@@ -49,7 +48,9 @@ const data = {
 const stateSelect = document.getElementById('state');
 const regionSelect = document.getElementById('region');
 const centreSelect = document.getElementById('centre');
+const serviceSelect = document.getElementById('service');
 const centreCardContainer = document.getElementById('centreCard');
+const serviceContainer = document.getElementById('serviceContainer');
 
 const appointmentContainer = document.getElementById('appointmentCont');
 const appointmentLink = document.getElementById('appointmentLink');
@@ -69,7 +70,7 @@ stateSelect.addEventListener('change', () => {
   regionSelect.innerHTML = '<option value="" disabled selected>Select Region</option>';
   centreSelect.innerHTML = '';
   centreCardContainer.innerHTML = '';
-  appointmentContainer.classList.add('hidden');
+  
 
   const selectedStateId = stateSelect.value;
   const selectedState = data.states.find(state => state.id === selectedStateId);
@@ -89,25 +90,60 @@ stateSelect.addEventListener('change', () => {
   document.getElementById('regionContainer').classList.remove('hidden');
   // Hide centreContainer and centreCard
   document.getElementById('centreContainer').classList.add('hidden');
+  document.getElementById('serviceContainer').classList.add('hidden');
   centreCardContainer.classList.add('hidden');
+  appointmentContainer.classList.add('hidden');
 });
 
 // Populate centre select
 regionSelect.addEventListener('change', () => {
   // Clear existing options in centre select
   centreSelect.innerHTML = '<option value="" disabled selected>Select Centre</option>';
+  serviceSelect.innerHTML = '<option value="" disabled selected>Select Service Type</option>';
   centreCardContainer.innerHTML = '';
 
   const selectedRegionId = regionSelect.value;
   const selectedRegion = data.regions.find(region => region.id === selectedRegionId);
+  
+  // Populate service select options based on selected region
+  const servicesSet = new Set();
+  selectedRegion.centres.forEach(centreId => {
+    const matchingCentre = data.centres.find(centre => centre.id === centreId);
+    if (matchingCentre) {
+      const services = matchingCentre.services.split(', ');
+      services.forEach(service => servicesSet.add(service));
+    }
+  });
 
-  // Populate centre select options based on selected region
-  selectedRegion.centres.forEach(centreId=> {
-    const matchingcentre = data.centres.find(centre => centre.id === centreId);
-    if (matchingcentre) {
+  servicesSet.forEach(service => {
+    const option = document.createElement('option');
+    option.value = service.toLowerCase();
+    option.textContent = service;
+    serviceSelect.appendChild(option);
+  });
+
+  // Show serviceContainer
+  document.getElementById('centreContainer').classList.add('hidden');
+  document.getElementById('serviceContainer').classList.remove('hidden');
+  centreCardContainer.classList.add('hidden');
+  appointmentContainer.classList.add('hidden');
+});
+
+serviceSelect.addEventListener('change', () => {
+  centreSelect.innerHTML = '<option value="" disabled selected>Select Centre</option>';
+
+  const selectedRegionId = regionSelect.value;
+  const selectedServiceType = serviceSelect.value;
+  const selectedRegion = data.regions.find(region => region.id === selectedRegionId);
+
+  // Populate centre select options based on selected region and service type
+  selectedRegion.centres.forEach(centreId => {
+    const matchingCentre = data.centres.find(centre => centre.id === centreId);
+    
+    if (matchingCentre && matchingCentre.services.toLowerCase() === selectedServiceType) {
       const option = document.createElement('option');
-      option.value = matchingcentre.id;
-      option.textContent = matchingcentre.name;
+      option.value = matchingCentre.id;
+      option.textContent = matchingCentre.name;
       centreSelect.appendChild(option);
     }
   });
@@ -115,7 +151,9 @@ regionSelect.addEventListener('change', () => {
   // Show centreContainer
   document.getElementById('centreContainer').classList.remove('hidden');
   centreCardContainer.classList.add('hidden');
+  appointmentContainer.classList.add('hidden');
 });
+
 
 centreSelect.addEventListener('change', () => {
   const selectedCentreId = centreSelect.value;
