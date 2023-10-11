@@ -1,11 +1,13 @@
 const data = {
   states: [
     { id: 'lagos', name: 'Lagos', regions: ["surulere"] },
+    // { id: 'lagos', name: 'Lagos', regions: ["surulere", "ago"] },
     { id: 'abuja', name: 'Abuja', regions: ["kubwa"] },
     { id: 'enugu', name: 'Enugu', regions: ["ogui"] },
   ],
   regions: [
     { id: 'surulere', name: ' Surulere', centres: ['centre1'] },
+    // { id: 'ago', name: ' Ago', centres: ['centre4'] },
     { id: 'kubwa', name: 'Kubwa', centres: ['centre2'] },
     { id: 'ogui', name: 'Ogui', centres: ['centre3'] },
     
@@ -19,7 +21,7 @@ const data = {
       mapsLink: 'https://is.gd/8HKDW7', 
       address: 'No 11 Gbajumo Close, off Adeniran Ogunsanya Street, Surulere, Lagos, Nigeria.', 
       phone:'+234 806 261 6951', 
-      formlink: 'https://docs.google.com/forms/d/e/1FAIpQLSccXsXhUx-a61qcgKeG3Vpa9o9f30jDnNnPJi_5dir5fcFXCQ/viewform'
+      formlink: 'https://forms.gle/eCLRi6mHxXei9Nwm9'
     },
     { 
       id: 'centre2', 
@@ -29,7 +31,7 @@ const data = {
       mapsLink: 'https://maps.app.goo.gl/Nu6sSmAp7hNRTxQj6', 
       address: 'Suite B7 Goshen Plaza, Kubwa Abuja.', 
       phone: '08039559525', 
-      formlink: '' 
+      formlink: 'https://forms.gle/2heiXGNFPSUeaRDN6' 
     },
     { 
       id: 'centre3', 
@@ -39,8 +41,18 @@ const data = {
       mapsLink: 'https://goo.gl/maps/5MijcNRdNTo3diJd7', 
       address: 'No 14 Oba Street Ogui Enugu, Nigeria', 
       phone: '08137272674, 08037411702', 
-      formlink: ''
+      formlink: 'https://forms.gle/pPitAobC3ucFCk657'
     },
+    // { 
+    //   id: 'centre4', 
+    //   name: 'Test Pharmacy', 
+    //   managerName: 'joshytheprogrammer',  
+    //   services: 'Buy Self Sampling Device',
+    //   mapsLink: 'https://goo.gl/maps/5MijcNRdNTo3diJd7', 
+    //   address: 'No 14 Oba Street Ogui Enugu, Nigeria', 
+    //   phone: '08137272674, 08037411702', 
+    //   formlink: 'https://forms.gle/pPitAobC3ucFCk657'
+    // },
     
   ],
 };
