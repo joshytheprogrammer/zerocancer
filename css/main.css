@@ -591,6 +591,11 @@ video {
   margin-right: auto;
 }
 
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-4{
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -785,6 +790,11 @@ video {
   line-height: 2rem;
 }
 
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -851,38 +861,8 @@ video {
   transition-duration: 500ms;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-html, 
-body {
-  overflow-x: hidden;
-  font-family: 'Work Sans', 'Josfine Sans';
-}
-
-/* Style for custom scrollbar */
-
-body::-webkit-scrollbar {
-  width: 5px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #336699;
-  /* Use your main color */
-  border-radius: 5px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background-color: #336699;
-  /* Slightly darker color on hover */
+html, body {
+  font-family: 'Work Sans', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .after\:content-\[\'_\2197\'\]::after{
@@ -922,6 +902,10 @@ body::-webkit-scrollbar-thumb:hover {
 @media (min-width: 1024px){
   .lg\:w-36{
     width: 9rem;
+  }
+
+  .lg\:p-6{
+    padding: 1.5rem;
   }
 
   .lg\:text-3xl{
