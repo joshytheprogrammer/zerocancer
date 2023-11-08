@@ -1,12 +1,13 @@
 const data = {
   states: [
-    { id: 'lagos', name: 'Lagos', regions: ["surulere"] },
+    { id: 'lagos', name: 'Lagos', regions: ["surulere", "vic_island"] },
     // { id: 'lagos', name: 'Lagos', regions: ["surulere", "ago"] },
     { id: 'abuja', name: 'Abuja', regions: ["kubwa"] },
     { id: 'enugu', name: 'Enugu', regions: ["ogui"] },
   ],
   regions: [
     { id: 'surulere', name: ' Surulere', centres: ['centre1'] },
+    { id: 'vic_island', name: ' Victoria Island', centres: ['tbagc'] },
     // { id: 'ago', name: ' Ago', centres: ['centre4'] },
     { id: 'kubwa', name: 'Kubwa', centres: ['centre2'] },
     { id: 'ogui', name: 'Ogui', centres: ['centre3'] },
@@ -42,6 +43,17 @@ const data = {
       address: 'No 14 Oba Street Ogui Enugu, Nigeria', 
       phone: '08137272674, 08037411702', 
       formlink: 'https://forms.gle/pPitAobC3ucFCk657'
+    },
+    
+    { 
+      id: 'tbagc', 
+      name: 'The Breast and Gynae Center', 
+      managerName: 'Seyi',  
+      services: 'Screening + Diagnosis and Treatment',
+      mapsLink: 'https://maps.app.goo.gl/X7L57nxBCJMEXaNy7', 
+      address: '276A Kofo Abayomi Street, Victoria Island Lagos', 
+      phone: '08120494763, 08021193912', 
+      formlink: 'https://forms.gle/hcq17249PCaCxdeB6'
     },
     // { 
     //   id: 'centre4', 
