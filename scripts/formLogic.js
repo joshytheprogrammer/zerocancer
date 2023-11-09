@@ -48,11 +48,11 @@ const data = {
     { 
       id: 'tbagc', 
       name: 'The Breast and Gynae Center', 
-      managerName: 'Seyi',  
+      managerName: 'Dr Seyi Afolabi',  
       services: 'Screening + Diagnosis and Treatment',
       mapsLink: 'https://maps.app.goo.gl/X7L57nxBCJMEXaNy7', 
       address: '276A Kofo Abayomi Street, Victoria Island Lagos', 
-      phone: '08120494763, 08021193912', 
+      phone: '08120494763, 08021193912, 07033874397', 
       formlink: 'https://forms.gle/hcq17249PCaCxdeB6'
     },
     // { 
