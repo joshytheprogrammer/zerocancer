@@ -1,11 +1,17 @@
 import { db, collection, getDocs } from "./firebase.js";
 
-const stateCont = document.getElementById('tBD_state')
-const loadingIndicator = document.getElementById('loadingIndicator');
+document.addEventListener('DOMContentLoaded', function() {
+  const stateCont = document.getElementById('tBD_state');
+  const loadingIndicator = document.getElementById('loadingIndicator');
 
-// Hide Form
-stateCont.style.display = 'none'
-loadingIndicator.style.display = 'block';
+  // Check if elements are found before attempting to access their properties
+  if (stateCont && loadingIndicator) {
+    stateCont.style.display = 'none';
+    loadingIndicator.style.display = 'block';
+  } else {
+    console.error("One or both of the elements were not found.");
+  }
+});
 
 const fetchDataFromFirestore = async () => {
   try {
