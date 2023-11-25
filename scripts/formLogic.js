@@ -1,17 +1,7 @@
 import { db, collection, getDocs } from "./firebase.js";
 
-document.addEventListener('DOMContentLoaded', function() {
-  const stateCont = document.getElementById('tBD_state');
-  const loadingIndicator = document.getElementById('loadingIndicator');
-
-  // Check if elements are found before attempting to access their properties
-  if (stateCont && loadingIndicator) {
-    stateCont.style.display = 'none';
-    loadingIndicator.style.display = 'block';
-  } else {
-    console.error("One or both of the elements were not found.");
-  }
-});
+const stateCont = document.getElementById('tBD_state');
+const loadingIndicator = document.getElementById('loadingIndicator');
 
 const fetchDataFromFirestore = async () => {
   try {
@@ -37,9 +27,6 @@ const fetchDataFromFirestore = async () => {
       data.centres.push({ id: doc.id, ...doc.data() });
     });
 
-    console.log(data.centres)
-
-    
     loadingIndicator.style.display = 'none';
     stateCont.style.display = 'flex'
     return data;

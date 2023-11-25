@@ -1,7 +1,5 @@
 const CACHE_NAME = 'zero-cancer-app-cache-v1';
 const urlsToCache = [
-  '/',
-  '/css/main.css',
   'https://res.cloudinary.com/dsgvwxygr/video/upload/v1691768919/zerocancer/Zerocancer_video_rchsqf.mp4',
   'https://res.cloudinary.com/dsgvwxygr/video/upload/v1691768919/zerocancer/Zerocancer_video_rchsqf.webm',
   'https://res.cloudinary.com/dsgvwxygr/image/upload/v1691762051/zerocancer/logo_ojnm9f.png',
