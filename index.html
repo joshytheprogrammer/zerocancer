@@ -26,6 +26,7 @@
   <link rel="icon" type="image/png" href="./img/logo.png">
   <link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192x192.png">
   <link rel="preload" href="css/animate.css" as="style">
+
   <title>Zero Cancer - Product Landing Page</title>
 </head>
 
@@ -124,8 +125,12 @@
         </h1>
         <span class="absolute w-24 h-1 rounded-sm bg-primary bottom-0 left-0 mb-2"></span>
       </div>
+
+      <div id="loadingIndicator" style="display: none;">
+        Loading...
+      </div>
       
-      <div class="flex flex-col animate__animated">
+      <div class="flex flex-col animate__animated" id="tBD_state">
         <label class="pb-2 font-medium lg:text-lg" for="state" >Select State:</label>
         <select class="bg-transparent py-1 border border-black rounded-lg h-12 outline-none focus:border-primary transition duration-300" name="state" id="state">
           <option value="" disabled selected>Select State</option>
@@ -182,7 +187,7 @@
   </div>
   
   <footer class="text-center font-medium text-md my-6 py-2">
-    <p class="block">You can reach out to us <a class="text-primary underline cursor-pointer" href="mailto:info@zerocancer.africa">here</a></p>
+    <p class="block">You can reach out to us <a class="text-primary underline cursor-pointer" href="mailto:admin@zerocancer.africa">here</a></p>
     &copy; <span class="font-bold" id="currentYear"></span> ZeroCancer. All rights reserved.
   </footer>
 

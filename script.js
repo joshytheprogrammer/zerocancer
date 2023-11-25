@@ -1,3 +1,4 @@
+
 import './scripts/currentYear.js';
 import './scripts/animateOnLoad.js';
 import './scripts/addToHome.js';

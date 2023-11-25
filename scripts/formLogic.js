@@ -1,73 +1,49 @@
-const data = {
-  states: [
-    { id: 'lagos', name: 'Lagos', regions: ["surulere", "vic_island"] },
-    // { id: 'lagos', name: 'Lagos', regions: ["surulere", "ago"] },
-    { id: 'abuja', name: 'Abuja', regions: ["kubwa"] },
-    { id: 'enugu', name: 'Enugu', regions: ["ogui"] },
-  ],
-  regions: [
-    { id: 'surulere', name: ' Surulere', centres: ['centre1'] },
-    { id: 'vic_island', name: ' Victoria Island', centres: ['tbagc'] },
-    // { id: 'ago', name: ' Ago', centres: ['centre4'] },
-    { id: 'kubwa', name: 'Kubwa', centres: ['centre2'] },
-    { id: 'ogui', name: 'Ogui', centres: ['centre3'] },
+import { db, collection, getDocs } from "./firebase.js";
+
+const stateCont = document.getElementById('tBD_state')
+const loadingIndicator = document.getElementById('loadingIndicator');
+
+// Hide Form
+stateCont.style.display = 'none'
+loadingIndicator.style.display = 'block';
+
+const fetchDataFromFirestore = async () => {
+  try {
+    const data = {
+      states: [],
+      regions: [],
+      centres: [],
+    };
+
+    const stateSnapshot = await getDocs(collection(db, 'locations', 'states', 'state'));
+    const regionSnapshot = await getDocs(collection(db, 'locations', 'regions', 'region'));
+    const centreSnapshot = await getDocs(collection(db, 'locations', 'centres', 'centre'));
+
+    stateSnapshot.forEach((doc) => {
+      data.states.push({ id: doc.id, ...doc.data() });
+    });
+
+    regionSnapshot.forEach((doc) => {
+      data.regions.push({ id: doc.id, ...doc.data() });
+    });
+
+    centreSnapshot.forEach((doc) => {
+      data.centres.push({ id: doc.id, ...doc.data() });
+    });
+
+    console.log(data.centres)
+
     
-  ],
-  centres: [
-    { 
-      id: 'centre1', 
-      name: 'The Female Doc', 
-      managerName: 'Dr. Ayodele Akenzua', 
-      services: 'Screening + Diagnosis and Treatment',
-      mapsLink: 'https://is.gd/8HKDW7', 
-      address: 'No 11 Gbajumo Close, off Adeniran Ogunsanya Street, Surulere, Lagos, Nigeria.', 
-      phone:'+234 806 261 6951', 
-      formlink: 'https://forms.gle/eCLRi6mHxXei9Nwm9'
-    },
-    { 
-      id: 'centre2', 
-      name: 'Xabat Clinic Ltd', 
-      managerName: 'Dr. Christian Omale Musa',  
-      services: 'Screening + Diagnosis and Treatment',
-      mapsLink: 'https://maps.app.goo.gl/Nu6sSmAp7hNRTxQj6', 
-      address: 'Suite B7 Goshen Plaza, Kubwa Abuja.', 
-      phone: '08039559525', 
-      formlink: 'https://forms.gle/2heiXGNFPSUeaRDN6' 
-    },
-    { 
-      id: 'centre3', 
-      name: 'Nufan Diagnostic services', 
-      managerName: 'Okoye Emmanuel Chibuzo',  
-      services: 'Screening only',
-      mapsLink: 'https://goo.gl/maps/5MijcNRdNTo3diJd7', 
-      address: 'No 14 Oba Street Ogui Enugu, Nigeria', 
-      phone: '08137272674, 08037411702', 
-      formlink: 'https://forms.gle/pPitAobC3ucFCk657'
-    },
-    
-    { 
-      id: 'tbagc', 
-      name: 'The Breast and Gynae Center', 
-      managerName: 'Dr Seyi Afolabi',  
-      services: 'Screening + Diagnosis and Treatment',
-      mapsLink: 'https://maps.app.goo.gl/X7L57nxBCJMEXaNy7', 
-      address: '276A Kofo Abayomi Street, Victoria Island Lagos', 
-      phone: '08120494763, 08021193912, 07033874397', 
-      formlink: 'https://forms.gle/hcq17249PCaCxdeB6'
-    },
-    // { 
-    //   id: 'centre4', 
-    //   name: 'Test Pharmacy', 
-    //   managerName: 'joshytheprogrammer',  
-    //   services: 'Buy Self Sampling Device',
-    //   mapsLink: 'https://goo.gl/maps/5MijcNRdNTo3diJd7', 
-    //   address: 'No 14 Oba Street Ogui Enugu, Nigeria', 
-    //   phone: '08137272674, 08037411702', 
-    //   formlink: 'https://forms.gle/pPitAobC3ucFCk657'
-    // },
-    
-  ],
+    loadingIndicator.style.display = 'none';
+    stateCont.style.display = 'flex'
+    return data;
+  } catch (error) {
+    console.error('Error fetching data from Firestore:', error);
+  }
 };
+
+// Call the function to fetch data
+const data = await fetchDataFromFirestore();
 
 const stateSelect = document.getElementById('state');
 const regionSelect = document.getElementById('region');
@@ -178,7 +154,6 @@ serviceSelect.addEventListener('change', () => {
   appointmentContainer.classList.add('hidden');
 });
 
-
 centreSelect.addEventListener('change', () => {
   const selectedCentreId = centreSelect.value;
   const selectedCentre = data.centres.find(centre => centre.id === selectedCentreId);
@@ -213,6 +188,6 @@ centreSelect.addEventListener('change', () => {
   centreCardContainer.classList.remove('hidden');
 
   appointmentContainer.classList.remove('hidden');
-  appointmentLink.href = selectedCentre.formlink;
-  appointmentIframe.src = selectedCentre.formlink;
+  appointmentLink.href = selectedCentre.formLink;
+  appointmentIframe.src = selectedCentre.formLink;
 });
